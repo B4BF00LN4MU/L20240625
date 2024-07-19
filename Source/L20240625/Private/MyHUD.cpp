@@ -2,6 +2,8 @@
 
 
 #include "MyHUD.h"
+#include "Blueprint\WidgetLayoutLibrary.h"
+#include "Engine/Canvas.h"
 
 AMyHUD::AMyHUD()
 {
@@ -9,10 +11,15 @@ AMyHUD::AMyHUD()
 }
 
 void AMyHUD::DrawHUD()
-{
+{	/*
 	GetOwningPlayerController()->GetViewportSize(CenterX, CenterY);
 	CenterX /= 2;
 	CenterY /= 2;
+	*/
+	Super::DrawHUD();
+	SetCenterX(Canvas->SizeX);
+	SetCenterY(Canvas->SizeY);
+	
 }
 
 int AMyHUD::GetCenterX()
@@ -45,12 +52,12 @@ void AMyHUD::SetCrosshairSize(int32 SetCrosshairSize)
 	CrosshairSize = SetCrosshairSize;
 }
 
-float AMyHUD::GetCrosshiarOpen()
+float AMyHUD::GetCrosshairRecoil()
 {
-	return CrosshairOpen;
+	return CrosshairRecoil;
 }
 
-void AMyHUD::SetCrosshiarOpen(float SetCrosshairOpen)
+void AMyHUD::SetCrosshairRecoil(float SetCrosshiarRecoil)
 {
-	CrosshairOpen = SetCrosshairOpen;
+	CrosshairRecoil = SetCrosshiarRecoil;
 }

@@ -15,7 +15,9 @@ class L20240625_API AMyHUD : public AHUD
 	GENERATED_BODY()
 public:
 	AMyHUD();
+
 	virtual void DrawHUD() override;
+
 	int32 GetCenterX();
 	void SetCenterX(int32 SetCenterX);
 
@@ -25,12 +27,12 @@ public:
 	int32 GetCrosshairSize();
 	void SetCrosshairSize(int32 SetCrosshairSize);
 
-	float GetCrosshiarOpen();
-	void SetCrosshiarOpen(float SetCrosshairOpen);
+	float GetCrosshairRecoil();
+	void SetCrosshairRecoil(float SetCrosshairRecoil);
 
 protected:
 	int32 CenterX;
 	int32 CenterY;
 	int32 CrosshairSize;
-	float CrosshairOpen;
+	float CrosshairRecoil;
 };
